@@ -12,6 +12,7 @@ function RegisterForm() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+
         const success = await register(email, password)
         
         if (success) {
