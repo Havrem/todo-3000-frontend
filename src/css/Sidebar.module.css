@@ -1,0 +1,28 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    height: 65vh;
+    gap:2rem;
+  }
+
+  .profilePicture {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .navCustom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navLink {
+    color:black;
+    text-decoration: none;
+    
+  }

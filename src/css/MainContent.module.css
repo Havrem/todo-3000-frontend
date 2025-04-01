@@ -1,0 +1,8 @@
+.mainContainer {
+    flex: 3;
+    background-color: white;
+    height: 65vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
