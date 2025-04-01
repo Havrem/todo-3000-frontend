@@ -31,6 +31,24 @@
     gap: 1rem;
 }
 
+@media (max-width:1200px) {
+    .outmostContainer {
+        width: 45vw !important;
+    }
+}
+
+@media (max-width:800px) {
+    .outmostContainer {
+        width: 55vw !important;
+    }
+}
+
+@media (max-width:600px) {
+    .outmostContainer {
+        width: 65vw !important;
+    }
+}
+
 .header {
     display: flex;
     flex-direction: column;

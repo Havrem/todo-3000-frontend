@@ -24,14 +24,31 @@
     margin-left: auto;
 }
 
+.createTodo {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
 .mainTitle {
     font-family: "Permanent Marker", cursive;
     font-weight: 400;
     font-style: normal;
   }
 
-  .todosContainer {
+@media (max-width: 600px) {
+    .createTodo {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .mainTitle {
+        display: none;
+    }
+}
+
+.todosContainer {
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-  }
+}

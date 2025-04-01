@@ -1,6 +1,6 @@
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import styles from "../../css/Drawer.module.css"
 
 function LogoutButton() {
     const { logout } = useAuth();
@@ -14,9 +14,9 @@ function LogoutButton() {
     }
 
     return(
-        <Button onClick={handleLogout}>
+        <button onClick={handleLogout} className={styles.logoutButton}>
             Logout
-        </Button>
+        </button>
     );
 }
 

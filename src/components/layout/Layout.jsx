@@ -4,6 +4,8 @@ import MainContent from "./MainContent";
 import MainContainer from "./MainContainer";
 import Sidebar from "./Sidebar";
 import { useAuth } from '../../hooks/useAuth';
+import Drawer from "./Drawer";
+import { DrawerProvider } from "./DrawerContext";
 
 const Layout = () => {
   const { user } = useAuth();
@@ -16,16 +18,19 @@ const Layout = () => {
       {isPublicPage ? (
         <Outlet />
       ) : (
-        <MainContainer>
-          {user && (
-            <>
-              <Sidebar />
-              <MainContent>
-                  <Outlet />
-              </MainContent>
-            </>
-          )}
-        </MainContainer>
+        <DrawerProvider>
+          <MainContainer>
+            {user && (
+              <>
+                <Drawer></Drawer>
+                <Sidebar />
+                <MainContent>
+                    <Outlet />
+                </MainContent>
+              </>
+            )}
+          </MainContainer>
+        </DrawerProvider>
       )}
     </Background>
   );

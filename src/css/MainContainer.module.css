@@ -22,4 +22,48 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding: 2rem;
-  }
+}
+
+.header {
+    display: none;
+}
+
+.mainTitle {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+@media (max-width:1200px) {
+    .outmostContainer {
+        width: 75vw !important;
+        padding: 2rem;
+    }
+}
+
+@media (max-width:800px) {
+    .outmostContainer {
+        width: 85vw !important;
+        padding: 2rem;
+    }
+}
+
+@media (max-width:600px) {
+    .outmostContainer {
+        width: 95vw !important;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .scrollClip {
+        padding: 0;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}

@@ -2,7 +2,18 @@
     flex: 3;
     background-color: white;
     height: 65vh;
-    overflow: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width:600px) {
+    .mainContainer {
+        width: 100vw;
+    }
+}
+
+.mainContainer > * {
+    max-width: 100%;
+  }
+  
