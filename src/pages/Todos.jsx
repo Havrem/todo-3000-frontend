@@ -7,7 +7,7 @@ import styles from "../css/Todo.module.css";
 const Todos = () => {
     const {data: todos, isLoading, isError} = useTodos();
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...if you're the first vistor in a while, it takes time to wake up the server!</p>;
     if (isError) return <p>Something went wrong!</p>;
 
     return (

@@ -8,21 +8,27 @@ function RegisterForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { register } = useAuth();
+    const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         const success = await register(email, password)
         
         if (success) {
-            navigate('/login')
+            e.preventDefault();
+            const success = await login(email, password)
+    
+            if (success) {
+                navigate('/todos')
+            }
         }
     }
 
     return (
         <Container className={styles.mainContainer}>
-            <Form onSubmit={handleLogin} className={styles.registerForm}>
+            <Form onSubmit={handleRegister} className={styles.registerForm}>
                 <Form.Group>
                     <Form.Control type ="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.field}></Form.Control>
                 </Form.Group>
