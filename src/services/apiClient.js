@@ -1,6 +1,6 @@
 import { auth } from "../configs/firebase"
 
-const BASE_URL = 'https://todo-3000.onrender.com'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const apiClient = async (endpoint, options = {}) => {
     const token = await auth.currentUser.getIdToken();
