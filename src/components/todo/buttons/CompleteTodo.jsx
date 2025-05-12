@@ -5,7 +5,7 @@ import styles from "../../../css/Todo.module.css"
 
 const CompleteTodo = ({todo}) => {
     const { mutate: updateTodo } = useUpdateTodo();
-    const [filled, setFilled] = useState(false);
+    const [filled, setFilled] = useState(todo.completed);
 
     const handleToggle = () => {
         updateTodo({id: todo.id, data: {completed: !todo.completed}});

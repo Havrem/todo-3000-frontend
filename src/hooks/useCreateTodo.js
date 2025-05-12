@@ -5,9 +5,9 @@ const useCreateTodo = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: (data) => todoService.createTodo(data),
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['todos'] });
+        mutationFn: async (data) => {
+            await todoService.createTodo(data)
+            await queryClient.invalidateQueries({ queryKey: ['todos'] });
         }
     });
 }

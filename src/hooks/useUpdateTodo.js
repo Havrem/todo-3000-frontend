@@ -5,9 +5,9 @@ const useUpdateTodo = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: ({id, data}) => todoService.updateTodo(id, data),
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['todos'] });
+        mutationFn: async ({id, data}) => {
+            await todoService.updateTodo(id, data)
+            await queryClient.invalidateQueries({ queryKey: ['todos'] });
         }
     });
 }

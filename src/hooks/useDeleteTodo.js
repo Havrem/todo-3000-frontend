@@ -5,8 +5,10 @@ const useDeleteTodo = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: (id) => todoService.deleteTodo(id),
-        onSuccess: () => queryClient.invalidateQueries({ queryKey: ['todos'] })
+        mutationFn: async (id) => {
+            await todoService.deleteTodo(id)
+            await queryClient.invalidateQueries({queryKey:['todos']})
+        },
     });
 }
 

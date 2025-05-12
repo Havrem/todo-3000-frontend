@@ -1,6 +1,7 @@
 import { auth } from "../configs/firebase"
 
-const BASE_URL = 'https://todo-3000.onrender.com'
+// const BASE_URL = 'https://todo-3000.onrender.com'
+const BASE_URL = 'http://localhost:8080'
 
 export const apiClient = async (endpoint, options = {}) => {
     const token = await auth.currentUser.getIdToken();
@@ -21,7 +22,12 @@ export const apiClient = async (endpoint, options = {}) => {
           : await response.text();
       
         throw new Error(`API error: ${response.status} - ${JSON.stringify(errorBody)}`);
-      }
+    }
 
-    return response.json();
+    if(response.status == 204) {
+      return null;
+    }
+
+    const text = await response.text();
+    return text ? JSON.parse(text) : null;
 }
